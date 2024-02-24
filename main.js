@@ -45,7 +45,7 @@ function isAnyAnimationInProgress(className) {
     function traverse(element) {
         var animation = window.getComputedStyle(element).animationName;
         if (animation !== 'none' && animation !== 'initial') {
-            console.log('Animation in progress for element:', element, 'with animation:', animation);
+            //console.log('Animation in progress for element:', element, 'with animation:', animation);
             return true;
         }
         for (var i = 0; i < element.children.length; i++) {
@@ -109,7 +109,7 @@ function handleTouchEnd(e) {
         }
 
         // Print the detected direction
-        console.log('Swipe direction:', direction);
+        //console.log('Swipe direction:', direction);
         executeMove(direction);
         //document.getElementById('game-name').innerText=direction;
     }
