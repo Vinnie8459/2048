@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link type="text/css" rel="stylesheet" href="style.css">
+    <title>2048</title>
+    <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
+
+    <!-- FONT -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <audio id="audioClick" src="/assets/sound/click.mp3"></audio>
+    <audio id="audioMerge" src="/assets/sound/merge.mp3"></audio>
+    <audio id="audioHighestTile" src="/assets/sound/highesttile.mp3"></audio>
+    <audio id="audioGameOver" src="/assets/sound/gameover.mp3"></audio>
+    
+    <div id="game-heading">
+        <div id="game-name">2048</div>
+        <div id="score-container">
+            <div id="score-container-name">SCORE</div>
+            <div id="score-container-score">0</div>
+        </div>
+        <div id="best-container">
+            <div id="best-container-name">BEST</div>
+            <div id="best-container-score">0</div>
+        </div>
+    </div>
+    <div id="game-subheading">
+        <div id="game-text">Join the tiles and get to <b>2048!</b></div>
+        <div id="controls">
+            <button id="soundtoggle" onclick="toggleSound()"><i id="iconMuteUnmute" <i class='bx bxs-volume-full'></i></button>
+            <button id="newgame" onclick="restartGame()"><i class='bx bx-refresh'></i> New Game</button>
+        </div>
+    </div>
+    <div id="touch-area">
+        <div id="main-container">
+            <div id="background-container">
+                <div class="background-row">
+                    <div class="background-tile"></div>
+                    <div class="background-tile"></div>
+                    <div class="background-tile"></div>
+                    <div class="background-tile"></div>
+                </div>
+    
+                <div class="background-row">
+                    <div class="background-tile"></div>
+                    <div class="background-tile"></div>
+                    <div class="background-tile"></div>
+                    <div class="background-tile"></div>
+                </div>
+    
+                <div class="background-row">
+                    <div class="background-tile"></div>
+                    <div class="background-tile"></div>
+                    <div class="background-tile"></div>
+                    <div class="background-tile"></div>
+                </div>
+                
+                <div class="background-row">
+                    <div class="background-tile"></div>
+                    <div class="background-tile"></div>
+                    <div class="background-tile"></div>
+                    <div class="background-tile"></div>
+                </div>
+            </div>
+            <div id="game-over-screen" class="displaynone">
+                <div id="game-over-text">Game Over!</div>
+                <div id="game-over-button">
+                    <button onclick="restartGame(askagain = false)">Try again</button>
+                </div>
+            </div>
+            <div id="restartConfirm" class="displaynone">
+                <div id="restartConfirmText">Start a new game?</div>
+                <div id="restartConfirmButtons">
+                    <button id="restartConfirmYes" onclick="restartGame(askagain = false)">Yes</button>
+                    <button id="restartConfirmNo" onclick="restartConfirmNo()">No</button>
+                </div>
+
+            </div>
+            <div class="row row-1">
+                <div id="tile-1-1" class="tile empty"></div>
+                <div id="tile-1-2" class="tile empty"></div>
+                <div id="tile-1-3" class="tile empty"></div>
+                <div id="tile-1-4" class="tile empty"></div>
+            </div>
+
+            <div class="row row-2">
+                <div id="tile-2-1" class="tile empty"></div>
+                <div id="tile-2-2" class="tile empty"></div>
+                <div id="tile-2-3" class="tile empty"></div>
+                <div id="tile-2-4" class="tile empty"></div>
+            </div>
+
+            <div class="row row-3">
+                <div id="tile-3-1" class="tile empty"></div>
+                <div id="tile-3-2" class="tile empty"></div>
+                <div id="tile-3-3" class="tile empty"></div>
+                <div id="tile-3-4" class="tile empty"></div>
+            </div>
+            
+            <div class="row row-4">
+                <div id="tile-4-1" class="tile empty"></div>
+                <div id="tile-4-2" class="tile empty"></div>
+                <div id="tile-4-3" class="tile empty"></div>
+                <div id="tile-4-4" class="tile empty"></div>
+            </div>
+        </div>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>
